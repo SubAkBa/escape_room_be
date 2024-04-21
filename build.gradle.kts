@@ -42,6 +42,8 @@ dependencies {
     implementation("org.apache.commons:commons-lang3:3.14.0")
     implementation("org.apache.commons:commons-collections4:4.4")
 
+    kapt("org.springframework.boot:spring-boot-configuration-processor")
+
     // querydsl
     implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
     implementation("com.querydsl:querydsl-apt:5.0.0")
