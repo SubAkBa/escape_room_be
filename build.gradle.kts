@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.spring") version "1.9.23"
     kotlin("plugin.jpa") version "1.9.23"
+    kotlin("kapt") version "1.9.23"
 }
 
 group = "com.example"
@@ -37,6 +38,18 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
+
+    implementation("org.apache.commons:commons-lang3:3.14.0")
+    implementation("org.apache.commons:commons-collections4:4.4")
+
+    // querydsl
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    implementation("com.querydsl:querydsl-apt:5.0.0")
+    kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
+
+    // mapstruct
+    implementation("org.mapstruct:mapstruct:1.5.5.Final")
+    kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
 }
 
 tasks.withType<KotlinCompile> {
