@@ -6,6 +6,7 @@ data class RoomDto(
     val poster: String,
     val level: String,
     val fear: String,
-    val personnel: String,
+    val minPersonnel: Int,
+    val maxPersonnel: Int,
     val timeLimit: Int
 )
