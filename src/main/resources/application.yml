@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: escape_room_be
