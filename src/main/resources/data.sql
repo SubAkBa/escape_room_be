@@ -1,4 +1,5 @@
-drop table room;
+-- room
+drop table if exists room;
 
 create table if not exists room (
       room_no int auto_increment,
@@ -47,3 +48,25 @@ insert into room values (
     NOW(),
     "손원주"
 );
+
+
+
+
+-- room_time
+drop table if exists room_time;
+
+create table if not exists room_time (
+    room_time_no int auto_increment,
+    room_no int,
+    `time` varchar(10),
+    reg_time timestamp,
+    register varchar(10),
+    mod_time timestamp,
+    modifier varchar(10),
+    primary key (room_time_no)
+);
+
+insert into room_time values (null, 1, "1040", NOW(), "손원주", NOW(), "손원주"),
+                             (null, 1, "1150", NOW(), "손원주", NOW(), "손원주"),
+                             (null, 2, "1050", NOW(), "손원주", NOW(), "손원주"),
+                             (null, 2, "1200", NOW(), "손원주", NOW(), "손원주");
