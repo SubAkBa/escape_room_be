@@ -6,8 +6,6 @@ import com.example.escape_room_be.mapper.RoomMapper
 import com.example.escape_room_be.repository.RoomRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.util.*
-import java.util.stream.Collectors
 
 @Service
 class RoomService(
@@ -18,8 +16,8 @@ class RoomService(
     fun getRoomList(): List<RoomDto> {
         val roomList: List<Room> = roomRepository.selectRoomList()
 
-        return roomList.stream()
+        return roomList
             .map { roomMapper.convertToDto(it) }
-            .collect(Collectors.toList())
+            .toList()
     }
 }

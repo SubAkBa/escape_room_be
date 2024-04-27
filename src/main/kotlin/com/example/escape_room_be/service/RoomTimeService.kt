@@ -5,7 +5,6 @@ import com.example.escape_room_be.mapper.RoomTimeMapper
 import com.example.escape_room_be.repository.RoomTimeRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.util.stream.Collectors
 
 @Service
 class RoomTimeService(
@@ -21,8 +20,8 @@ class RoomTimeService(
     fun getRoomTimeListByRoomNo(roomNo: Int): List<RoomTimeDto> {
         val roomTimeListByRoomNo = roomTimeRepository.selectRoomTimeListByRoomNo(roomNo)
 
-        return roomTimeListByRoomNo.stream()
+        return roomTimeListByRoomNo
             .map { roomTimeMapper.convertToDto(it) }
-            .collect(Collectors.toList())
+            .toList()
     }
 }
