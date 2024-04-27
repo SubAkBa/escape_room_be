@@ -10,14 +10,20 @@ import lombok.NoArgsConstructor
 @Getter
 @NoArgsConstructor
 class RoomTime(
+    roomNo: Int,
+    time: String
+) : BaseEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_time_no")
-    val roomTimeNo: Int,
+    var roomTimeNo: Int = 0
 
     @Column(name = "room_no")
-    val roomNo: Int,
+    var roomNo: Int = roomNo
 
     @Column(name = "time")
-    val time: String
-) : BaseEntity()
+    var time: String = time
+
+    @OneToMany(mappedBy = "roomTime")
+    var roomReserveList: MutableList<RoomReserve> = ArrayList()
+}

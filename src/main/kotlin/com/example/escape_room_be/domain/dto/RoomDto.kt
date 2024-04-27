@@ -1,12 +1,12 @@
 package com.example.escape_room_be.domain.dto
 
 data class RoomDto(
-    val roomName: String,
-    val description: String,
-    val poster: String,
-    val level: String,
-    val fear: String,
-    val minPersonnel: Int,
-    val maxPersonnel: Int,
-    val timeLimit: Int
+    var roomName: String,
+    var description: String,
+    var poster: String,
+    var level: String,
+    var fear: String,
+    var minPersonnel: Int,
+    var maxPersonnel: Int,
+    var timeLimit: Int
 )
